@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:musicplay/core/theme/app_color.dart';
 
 class MyButton extends StatelessWidget {
   final Widget child;
@@ -16,8 +17,8 @@ class MyButton extends StatelessWidget {
       this.padding,
       this.ispress = false,
        this.btnbackground,
-      this.firstColor = Colors.white,
-      this.secondColor = Colors.amber});
+      this.firstColor =AppColor.light,
+      this.secondColor = AppColor.background});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class MyButton extends StatelessWidget {
       onTap: onpress,
       child: AnimatedContainer(
         duration: Duration(milliseconds: 100),
-        padding: padding ?? const EdgeInsets.all(20),
+        padding: padding ?? const EdgeInsets.all(14),
         decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: btnbackground,
@@ -33,26 +34,26 @@ class MyButton extends StatelessWidget {
                 ? [
                     BoxShadow(
                         color: firstColor,
-                        blurRadius: 5,
+                       
                         spreadRadius: 1,
                         offset: Offset(2, 2)),
                     BoxShadow(
                         color: firstColor,
-                        blurRadius: 5,
+                     
                         spreadRadius: 1,
                         offset: Offset(-1, -1))
                   ]
                 : [
                     BoxShadow(
                         color: firstColor,
-                        blurRadius: 7,
+                        blurRadius: 2,
                         spreadRadius: 1,
-                        offset: Offset(6, 6)),
+                        offset: Offset(2, 2)),
                     BoxShadow(
                         color: firstColor,
-                        blurRadius: 7,
+                        blurRadius: 5,
                         spreadRadius: 1,
-                        offset: Offset(-6, -6))
+                        offset: Offset(-1, -1)) 
                   ]),
         child: Center(
           child: child,

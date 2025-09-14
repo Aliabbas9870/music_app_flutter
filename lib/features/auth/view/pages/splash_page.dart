@@ -46,7 +46,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
             Container(
                 width: MediaQuery.of(context).size.width,
                 child: Lottie.asset(
-                  'animation/splash.json',
+                  'assets/animation/splash.json',
                   width: 400,
                   height: 400,
                 )),

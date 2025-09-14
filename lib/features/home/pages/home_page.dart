@@ -48,30 +48,32 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: AppColor.background,
       appBar: AppBar(
         actions: [
-          MyButton(child: Icon(Icons.favorite), onpress: () {}),
+          MyButton(child: Icon(Icons.favorite,color: AppColor.background,), onpress: () {}),
           SizedBox(
             width: 10,
           ),
-          MyButton(child: Icon(Icons.settings), onpress: () {}),
+          MyButton(child: Icon(Icons.settings,color: AppColor.background,), onpress: () {}),
           SizedBox(
             width: 10,
           ),
         ],
         toolbarHeight: 100,
-        leading: MyButton(child: Icon(Icons.person), onpress: () {}),
+        leading: MyButton(child: Icon(Icons.person,color: AppColor.background,), onpress: () {}),
         title: RichText(
             text: TextSpan(children: [
-          TextSpan(text: "tune"),
-          TextSpan(text: "sync"),
+          TextSpan(text: "tune",style:TextStyle(color: AppColor.light,fontSize: 30)),
+          TextSpan(text: "sync"  ,style:TextStyle(color: AppColor.warning,fontSize: 27)),
         ])),
       ),
       body: ValueListenableBuilder(
           valueListenable: audioController.songs,
           builder: (context, songs, child) {
             if (songs.isEmpty) {
-              return CircularProgressIndicator(
-                color: AppColor.warning,
-                strokeWidth: 9,
+              return Center(
+                child: CircularProgressIndicator(
+                  color: AppColor.warning,
+                  strokeWidth: 9,
+                ),
               );
             } else {
               return ListView.builder(

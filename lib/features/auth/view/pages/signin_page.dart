@@ -90,6 +90,11 @@ class _SigninPageState extends State<SigninPage> {
                             Widget? child) {
                           return InkWell(
                             onTap: () async {
+
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (c) => HomePage()));
                               final auth = ref.read(authControlProvider);
 
                               if (name.text.trim().isEmpty ||

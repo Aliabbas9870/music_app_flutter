@@ -39,9 +39,9 @@ dependencies:
   path: ^1.9.0
   flutter_riverpod: 
   just_audio:
-  on_audio_query_android:
+  # on_audio_query_android:s
+
   
-  on_audio_query: ^2.9.0
   marquee:
   audio_video_progress_bar:
   lottie:
@@ -52,7 +52,14 @@ dependencies:
   path_provider: 
 
   sqflite_common_ffi: ^2.3.0
-  
+  on_audio_query: ^2.9.0
+
+
+
+dependency_overrides:
+  on_audio_query_android:
+    path: packages/on_audio_query_android
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -77,7 +84,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/
+    # - assets/
     - assets/images/
     - assets/animation/
     # - images/a_dot_burr.jpeg
